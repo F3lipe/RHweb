@@ -15,6 +15,7 @@ public class AtualizacaoCisterna implements Identificavel {
 
 	@ManyToOne
 	private Cisterna cisterna;
+	
 	private Integer quantLitrosAgua;
 	
 	
@@ -106,16 +107,13 @@ public class AtualizacaoCisterna implements Identificavel {
 
 	public AtualizacaoCisterna() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
-	@Override
 	public Long getId() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
 	public void setId(Long id) {
 		// TODO Auto-generated method stub
 		

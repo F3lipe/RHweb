@@ -25,7 +25,6 @@ public class AtualizacaoCisternaService implements Serializable, Service<Atualiz
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#save(br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario)
 	 */
-	@Override
 	@TransacionalCdi
 	public void save(AtualizacaoCisterna ac) {
 		atualizacaoCisternaDAO.save(ac);
@@ -34,7 +33,6 @@ public class AtualizacaoCisternaService implements Serializable, Service<Atualiz
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#update(br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario, boolean)
 	 */
-	@Override
 	@TransacionalCdi
 	public void update(AtualizacaoCisterna ac)  {
 		atualizacaoCisternaDAO.update(ac);
@@ -43,7 +41,6 @@ public class AtualizacaoCisternaService implements Serializable, Service<Atualiz
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#delete(br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario)
 	 */
-	@Override
 	@TransacionalCdi
 	public void remove(AtualizacaoCisterna ac) {
 		atualizacaoCisternaDAO.remove(ac);
@@ -52,7 +49,6 @@ public class AtualizacaoCisternaService implements Serializable, Service<Atualiz
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getByID(long)
 	 */
-	@Override
 	public AtualizacaoCisterna getByID(long acId)  {
 			return atualizacaoCisternaDAO.getByID(acId);
 	}
@@ -60,7 +56,6 @@ public class AtualizacaoCisternaService implements Serializable, Service<Atualiz
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getAll()
 	 */
-	@Override
 	public List<AtualizacaoCisterna> getAll() {
 			return atualizacaoCisternaDAO.getAll();
 	}

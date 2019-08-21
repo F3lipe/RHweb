@@ -2,7 +2,14 @@ package br.edu.ifpb.esperanca.daw2.RecursosHidricos.entities;
 
 import java.sql.Date;
 
-public class Cultivo {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Cultivo implements Identificavel{
+	
+	@Id
+	private Long id;
 	private String nomeCultivo;
 	private String descrição;
 	private Date periodoSafra;

@@ -6,17 +6,20 @@ import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class MonitoramentoCisterna implements Identificavel {
+
 	@Id
-	private Long idMonitoramento;
+	private Long id;
+
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date monitoramento;
+
 	private Double quantAguaGastaTempo;
 	private Double quantAguaEconomizadaTempo;
-	
-	
-	
 
 	@OneToMany(mappedBy = "quantLitrosAgua")
 	private Set<AtualizacaoCisterna> aguaGasta;
@@ -24,12 +27,12 @@ public class MonitoramentoCisterna implements Identificavel {
 	@OneToMany(mappedBy = "quantLitrosAgua")
 	private Set<AtualizacaoCisterna> aguaEconomizada;
 
-	public Long getIdMonitoramento() {
-		return idMonitoramento;
+	public Long getId() {
+		return id;
 	}
 
-	public void setIdMonitoramento(Long idMonitoramento) {
-		this.idMonitoramento = idMonitoramento;
+	public void setId(Long idMonitoramento) {
+		this.id = idMonitoramento;
 	}
 
 	public Date getMonitoramento() {
@@ -78,7 +81,7 @@ public class MonitoramentoCisterna implements Identificavel {
 		int result = 1;
 		result = prime * result + ((aguaEconomizada == null) ? 0 : aguaEconomizada.hashCode());
 		result = prime * result + ((aguaGasta == null) ? 0 : aguaGasta.hashCode());
-		result = prime * result + ((idMonitoramento == null) ? 0 : idMonitoramento.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((monitoramento == null) ? 0 : monitoramento.hashCode());
 		result = prime * result + ((quantAguaEconomizadaTempo == null) ? 0 : quantAguaEconomizadaTempo.hashCode());
 		result = prime * result + ((quantAguaGastaTempo == null) ? 0 : quantAguaGastaTempo.hashCode());
@@ -104,10 +107,10 @@ public class MonitoramentoCisterna implements Identificavel {
 				return false;
 		} else if (!aguaGasta.equals(other.aguaGasta))
 			return false;
-		if (idMonitoramento == null) {
-			if (other.idMonitoramento != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!idMonitoramento.equals(other.idMonitoramento))
+		} else if (!id.equals(other.id))
 			return false;
 		if (monitoramento == null) {
 			if (other.monitoramento != null)
@@ -129,42 +132,9 @@ public class MonitoramentoCisterna implements Identificavel {
 
 	@Override
 	public String toString() {
-		return "MonitoramentoCisterna [idMonitoramento=" + idMonitoramento + ", monitoramento=" + monitoramento
+		return "MonitoramentoCisterna [idMonitoramento=" + id + ", monitoramento=" + monitoramento
 				+ ", quantAguaGastaTempo=" + quantAguaGastaTempo + ", quantAguaEconomizadaTempo="
 				+ quantAguaEconomizadaTempo + ", aguaGasta=" + aguaGasta + ", aguaEconomizada=" + aguaEconomizada + "]";
 	}
 
-	public MonitoramentoCisterna(Long idMonitoramento, Date monitoramento, Double quantAguaGastaTempo,
-			Double quantAguaEconomizadaTempo, Set<AtualizacaoCisterna> aguaGasta,
-			Set<AtualizacaoCisterna> aguaEconomizada) {
-		super();
-		this.idMonitoramento = idMonitoramento;
-		this.monitoramento = monitoramento;
-		this.quantAguaGastaTempo = quantAguaGastaTempo;
-		this.quantAguaEconomizadaTempo = quantAguaEconomizadaTempo;
-		this.aguaGasta = aguaGasta;
-		this.aguaEconomizada = aguaEconomizada;
-	}
-
-	public MonitoramentoCisterna() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	@Override
-	public Long getId() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setId(Long id) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	
-	}
-
-	
-
+}
