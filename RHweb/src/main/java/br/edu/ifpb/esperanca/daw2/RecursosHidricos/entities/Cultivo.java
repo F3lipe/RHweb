@@ -6,31 +6,51 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Cultivo implements Identificavel{
-	
+public class Cultivo implements Identificavel {
+
 	@Id
 	private Long id;
 	private String nomeCultivo;
 	private String descrição;
 	private Date periodoSafra;
+
+	@Override
+	public Long getId() {
+
+		return id;
+	}
+
+	@Override
+	public void setId(Long id) {
+		this.id = id;
+
+	}
+
 	public String getNomeCultivo() {
 		return nomeCultivo;
+
 	}
+
 	public void setNomeCultivo(String nomeCultivo) {
 		this.nomeCultivo = nomeCultivo;
 	}
+
 	public String getDescrição() {
 		return descrição;
 	}
+
 	public void setDescrição(String descrição) {
 		this.descrição = descrição;
 	}
+
 	public Date getPeriodoSafra() {
 		return periodoSafra;
 	}
+
 	public void setPeriodoSafra(Date periodoSafra) {
 		this.periodoSafra = periodoSafra;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -40,6 +60,7 @@ public class Cultivo implements Identificavel{
 		result = prime * result + ((periodoSafra == null) ? 0 : periodoSafra.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -66,23 +87,16 @@ public class Cultivo implements Identificavel{
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		return "Cultivo [nomeCultivo=" + nomeCultivo + ", descrição=" + descrição + ", periodoSafra=" + periodoSafra
 				+ "]";
 	}
-	public Cultivo(String nomeCultivo, String descrição, Date periodoSafra) {
-		super();
-		this.nomeCultivo = nomeCultivo;
-		this.descrição = descrição;
-		this.periodoSafra = periodoSafra;
-	}
+
 	public Cultivo() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	
 
 }

@@ -1,9 +1,19 @@
 package br.edu.ifpb.esperanca.daw2.RecursosHidricos.entities;
-import java.sql.Date;
+import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
 public class Irrigacao implements Identificavel {
+	
+	@Id
 	private Long id;
 	private Double tempoIrrigacao;
+	
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date diasDeIrrigacao;
 	public Long getId() {
 		return id;

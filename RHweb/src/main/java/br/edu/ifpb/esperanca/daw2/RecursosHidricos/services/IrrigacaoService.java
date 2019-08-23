@@ -24,7 +24,6 @@ public class IrrigacaoService implements Serializable, Service<Irrigacao> {
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#save(br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario)
 	 */
-	@Override
 	@TransacionalCdi
 	public void save(Irrigacao i) {
 		irrigacaoDAO.save(i);
@@ -33,7 +32,6 @@ public class IrrigacaoService implements Serializable, Service<Irrigacao> {
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#update(br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario, boolean)
 	 */
-	@Override
 	@TransacionalCdi
 	public void update(Irrigacao i)  {
 		irrigacaoDAO.update(i);
@@ -42,7 +40,6 @@ public class IrrigacaoService implements Serializable, Service<Irrigacao> {
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#delete(br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario)
 	 */
-	@Override
 	@TransacionalCdi
 	public void remove(Irrigacao i) {
 		irrigacaoDAO.remove(i);
@@ -51,7 +48,6 @@ public class IrrigacaoService implements Serializable, Service<Irrigacao> {
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getByID(long)
 	 */
-	@Override
 	public Irrigacao getByID(long i)  {
 			return irrigacaoDAO.getByID(i);
 	}
@@ -59,7 +55,6 @@ public class IrrigacaoService implements Serializable, Service<Irrigacao> {
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getAll()
 	 */
-	@Override
 	public List<Irrigacao> getAll() {
 			return irrigacaoDAO.getAll();
 	}

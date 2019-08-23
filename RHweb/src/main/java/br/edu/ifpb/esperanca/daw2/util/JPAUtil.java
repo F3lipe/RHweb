@@ -12,7 +12,7 @@ public class JPAUtil {
 
 	@Produces
 	@ApplicationScoped
-	public EntityManagerFactory criarEMF() {
+	public EntityManagerFactory criarEMF() throws Throwable {
 		EntityManagerFactory emf = null;
 		try {
 			emf = Persistence.createEntityManagerFactory("rhweb");

@@ -24,7 +24,6 @@ public class ProducaoService implements Serializable, Service<Producao> {
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#save(br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario)
 	 */
-	@Override
 	@TransacionalCdi
 	public void save(Producao p) {
 		producaoDAO.save(p);
@@ -33,7 +32,6 @@ public class ProducaoService implements Serializable, Service<Producao> {
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#update(br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario, boolean)
 	 */
-	@Override
 	@TransacionalCdi
 	public void update(Producao p)  {
 		producaoDAO.update(p);
@@ -42,7 +40,6 @@ public class ProducaoService implements Serializable, Service<Producao> {
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#delete(br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario)
 	 */
-	@Override
 	@TransacionalCdi
 	public void remove(Producao p) {
 		producaoDAO.remove(p);
@@ -51,7 +48,6 @@ public class ProducaoService implements Serializable, Service<Producao> {
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getByID(long)
 	 */
-	@Override
 	public Producao getByID(long pId)  {
 			return producaoDAO.getByID(pId);
 	}
@@ -59,7 +55,6 @@ public class ProducaoService implements Serializable, Service<Producao> {
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getAll()
 	 */
-	@Override
 	public List<Producao> getAll() {
 			return producaoDAO.getAll();
 	}

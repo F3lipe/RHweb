@@ -25,7 +25,6 @@ public class MonitoramentoCisternaService implements Serializable, Service<Monit
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#save(br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario)
 	 */
-	@Override
 	@TransacionalCdi
 	public void save(MonitoramentoCisterna m) {
 		monitoramentoCisternaDAO.save(m);
@@ -34,7 +33,6 @@ public class MonitoramentoCisternaService implements Serializable, Service<Monit
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#update(br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario, boolean)
 	 */
-	@Override
 	@TransacionalCdi
 	public void update(MonitoramentoCisterna m)  {
 		monitoramentoCisternaDAO.update(m);
@@ -43,7 +41,6 @@ public class MonitoramentoCisternaService implements Serializable, Service<Monit
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#delete(br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario)
 	 */
-	@Override
 	@TransacionalCdi
 	public void remove(MonitoramentoCisterna m) {
 		monitoramentoCisternaDAO.remove(m);
@@ -52,7 +49,6 @@ public class MonitoramentoCisternaService implements Serializable, Service<Monit
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getByID(long)
 	 */
-	@Override
 	public MonitoramentoCisterna getByID(long m)  {
 			return monitoramentoCisternaDAO.getByID(m);
 	}
@@ -60,7 +56,6 @@ public class MonitoramentoCisternaService implements Serializable, Service<Monit
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getAll()
 	 */
-	@Override
 	public List<MonitoramentoCisterna> getAll() {
 			return monitoramentoCisternaDAO.getAll();
 	}

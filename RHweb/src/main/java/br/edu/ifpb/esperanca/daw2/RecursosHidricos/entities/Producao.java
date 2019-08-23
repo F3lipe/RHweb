@@ -1,11 +1,25 @@
 package br.edu.ifpb.esperanca.daw2.RecursosHidricos.entities;
-import java.sql.Date;
+import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+
+@Entity
 public class Producao implements Identificavel{
 	
+	@Id 
 	private Long id;
+	
+	
 	private String cultivoPlantado;
+	
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataDoPlantio;
+	
+	
 	private Double QuantPlantadaPArea;
 	private Double QuantAguaGasta;
 	

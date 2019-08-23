@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="rhweb">
-	
-		<class>br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario</class>
-	
-	
+
+		<class>br.edu.ifpb.esperanca.daw2.RecursosHidricos.entities.Usuario</class>
+		<class>br.edu.ifpb.esperanca.daw2.RecursosHidricos.entities.AtualizacaoCisterna</class>
+		<class>br.edu.ifpb.esperanca.daw2.RecursosHidricos.entities.Cisterna</class>
+		<class>br.edu.ifpb.esperanca.daw2.RecursosHidricos.entities.Cultivo</class>
+		<class>br.edu.ifpb.esperanca.daw2.RecursosHidricos.entities.Irrigacao</class>
+		<class>br.edu.ifpb.esperanca.daw2.RecursosHidricos.entities.MonitoramentoCisterna</class>
+		<class>br.edu.ifpb.esperanca.daw2.RecursosHidricos.entities.Producao</class>
+
+
+
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/ifoto"/>
-			<property name="javax.persistence.jdbc.user" value="ifotouser"/>
-			<property name="javax.persistence.jdbc.password" value="ifotopassword"/>
-			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:postgresql://localhost:5432/RHweb" />
+			<property name="javax.persistence.jdbc.user"
+				value="RecursosHidricos" />
+			<property name="javax.persistence.jdbc.password" value="" />
+			<property name="javax.persistence.jdbc.driver"
+				value="org.postgresql.Driver" />
 			<property name="hibernate.hbm2ddl.auto" value="create" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
