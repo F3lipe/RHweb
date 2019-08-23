@@ -11,16 +11,14 @@ public class Cultivo implements Identificavel {
 	@Id
 	private Long id;
 	private String nomeCultivo;
-	private String descrição;
+	private String descricao;
 	private Date periodoSafra;
 
-	@Override
 	public Long getId() {
 
 		return id;
 	}
 
-	@Override
 	public void setId(Long id) {
 		this.id = id;
 
@@ -35,15 +33,15 @@ public class Cultivo implements Identificavel {
 		this.nomeCultivo = nomeCultivo;
 	}
 
-	public String getDescrição() {
-		return descrição;
+		public String getDescricao() {
+		return descricao;
 	}
 
-	public void setDescrição(String descrição) {
-		this.descrição = descrição;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
-	public Date getPeriodoSafra() {
+		public Date getPeriodoSafra() {
 		return periodoSafra;
 	}
 
@@ -55,7 +53,7 @@ public class Cultivo implements Identificavel {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((descrição == null) ? 0 : descrição.hashCode());
+		result = prime * result + ((descricao == null) ? 0 : descricao.hashCode());
 		result = prime * result + ((nomeCultivo == null) ? 0 : nomeCultivo.hashCode());
 		result = prime * result + ((periodoSafra == null) ? 0 : periodoSafra.hashCode());
 		return result;
@@ -70,10 +68,10 @@ public class Cultivo implements Identificavel {
 		if (getClass() != obj.getClass())
 			return false;
 		Cultivo other = (Cultivo) obj;
-		if (descrição == null) {
-			if (other.descrição != null)
+		if (descricao == null) {
+			if (other.descricao != null)
 				return false;
-		} else if (!descrição.equals(other.descrição))
+		} else if (!descricao.equals(other.descricao))
 			return false;
 		if (nomeCultivo == null) {
 			if (other.nomeCultivo != null)
@@ -90,7 +88,7 @@ public class Cultivo implements Identificavel {
 
 	@Override
 	public String toString() {
-		return "Cultivo [nomeCultivo=" + nomeCultivo + ", descrição=" + descrição + ", periodoSafra=" + periodoSafra
+		return "Cultivo [nomeCultivo=" + nomeCultivo + ", descriï¿½ï¿½o=" + descricao + ", periodoSafra=" + periodoSafra
 				+ "]";
 	}
 

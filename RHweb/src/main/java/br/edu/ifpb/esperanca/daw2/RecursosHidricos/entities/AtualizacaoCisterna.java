@@ -3,30 +3,35 @@ package br.edu.ifpb.esperanca.daw2.RecursosHidricos.entities;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class AtualizacaoCisterna implements Identificavel {
 
 	@Id
-	private Long idAtualização;
+	@GeneratedValue(generator= "atualizacao",  strategy=GenerationType.SEQUENCE)
+	@SequenceGenerator (name="atualizacao")
+	private Long id;
 	private Date periodoAguaAtualizada;
 
 	@ManyToOne
 	private Cisterna cisterna;
 	
-	private Integer quantLitrosAgua;
-	
-	
+	@ManyToOne
+	private AtualizacaoCisterna quantLitrosAgua;
 	
 
-	public Long getIdAtualização() {
-		return idAtualização;
+	public Long getId() {
+		return id;
 	}
 
-	public void setIdAtualização(Long idAtualização) {
-		this.idAtualização = idAtualização;
+	public void setId(Long idAtualizacao) {
+		this.id = idAtualizacao;
 	}
 
 	public Date getPeriodoAguaAtualizada() {
@@ -45,11 +50,11 @@ public class AtualizacaoCisterna implements Identificavel {
 		this.cisterna = cisterna;
 	}
 
-	public Integer getQuantLitrosAgua() {
+	public AtualizacaoCisterna getQuantLitrosAgua() {
 		return quantLitrosAgua;
 	}
 
-	public void setQuantLitrosAgua(Integer quantLitrosAgua) {
+	public void setQuantLitrosAgua(AtualizacaoCisterna quantLitrosAgua) {
 		this.quantLitrosAgua = quantLitrosAgua;
 	}
 
@@ -58,7 +63,7 @@ public class AtualizacaoCisterna implements Identificavel {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((cisterna == null) ? 0 : cisterna.hashCode());
-		result = prime * result + ((idAtualização == null) ? 0 : idAtualização.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((periodoAguaAtualizada == null) ? 0 : periodoAguaAtualizada.hashCode());
 		result = prime * result + ((quantLitrosAgua == null) ? 0 : quantLitrosAgua.hashCode());
 		return result;
@@ -78,10 +83,10 @@ public class AtualizacaoCisterna implements Identificavel {
 				return false;
 		} else if (!cisterna.equals(other.cisterna))
 			return false;
-		if (idAtualização == null) {
-			if (other.idAtualização != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!idAtualização.equals(other.idAtualização))
+		} else if (!id.equals(other.id))
 			return false;
 		if (periodoAguaAtualizada == null) {
 			if (other.periodoAguaAtualizada != null)
@@ -94,29 +99,6 @@ public class AtualizacaoCisterna implements Identificavel {
 		} else if (!quantLitrosAgua.equals(other.quantLitrosAgua))
 			return false;
 		return true;
-	}
-
-	public AtualizacaoCisterna(Long idAtualização, Date periodoAguaAtualizada, Cisterna cisterna,
-			Integer quantLitrosAgua) {
-		super();
-		this.idAtualização = idAtualização;
-		this.periodoAguaAtualizada = periodoAguaAtualizada;
-		this.cisterna = cisterna;
-		this.quantLitrosAgua = quantLitrosAgua;
-	}
-
-	public AtualizacaoCisterna() {
-		super();
-		
-	}
-
-	public Long getId() {
-		return null;
-	}
-
-	public void setId(Long id) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
