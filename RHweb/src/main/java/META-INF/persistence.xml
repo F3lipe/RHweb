@@ -3,7 +3,7 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-	<persistence-unit name="rhweb">
+	<persistence-unit name="rh">
 
 		<class>br.edu.ifpb.esperanca.daw2.RecursosHidricos.entities.Usuario</class>
 		<class>br.edu.ifpb.esperanca.daw2.RecursosHidricos.entities.AtualizacaoCisterna</class>
@@ -17,10 +17,10 @@
 
 		<properties>
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:postgresql://localhost:5432/RHweb" />
+				value="jdbc:postgresql://localhost:5432/rh" />
 			<property name="javax.persistence.jdbc.user"
 				value="RecursosHidricos" />
-			<property name="javax.persistence.jdbc.password" value="" />
+			<property name="javax.persistence.jdbc.password" value="Lebisca" />
 			<property name="javax.persistence.jdbc.driver"
 				value="org.postgresql.Driver" />
 			<property name="hibernate.hbm2ddl.auto" value="create" />
