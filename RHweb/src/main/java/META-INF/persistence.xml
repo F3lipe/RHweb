@@ -17,9 +17,9 @@
 
 		<properties>
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:postgresql://localhost:5432/rh" />
+				value="jdbc:postgresql://192.168.4.117:5432/rh" />
 			<property name="javax.persistence.jdbc.user"
-				value="RecursosHidricos" />
+				value="recursoshidricos" />
 			<property name="javax.persistence.jdbc.password" value="Lebisca" />
 			<property name="javax.persistence.jdbc.driver"
 				value="org.postgresql.Driver" />
