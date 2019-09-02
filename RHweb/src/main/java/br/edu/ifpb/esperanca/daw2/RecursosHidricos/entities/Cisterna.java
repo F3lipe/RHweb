@@ -1,6 +1,6 @@
 package br.edu.ifpb.esperanca.daw2.RecursosHidricos.entities;
 
-import java.util.ArrayList;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -114,7 +114,7 @@ public class Cisterna implements Identificavel {
 	}
 	public Cisterna() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 }

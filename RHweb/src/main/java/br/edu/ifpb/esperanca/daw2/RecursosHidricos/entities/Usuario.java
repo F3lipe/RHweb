@@ -153,7 +153,7 @@ public class Usuario implements Identificavel{
 	}
 	public Usuario() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 }

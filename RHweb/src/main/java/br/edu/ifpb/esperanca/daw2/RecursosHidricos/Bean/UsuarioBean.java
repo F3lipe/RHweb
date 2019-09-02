@@ -12,6 +12,7 @@ import br.edu.ifpb.esperanca.daw2.RecursosHidricos.entities.Usuario;
 import br.edu.ifpb.esperanca.daw2.RecursosHidricos.services.UsuarioService;
 
 
+
 @SessionScoped
 @Named
 public class UsuarioBean implements Serializable {

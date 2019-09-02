@@ -94,7 +94,7 @@ public class Cultivo implements Identificavel {
 
 	public Cultivo() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 }

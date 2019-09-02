@@ -12,7 +12,7 @@
 	<p:messages />
 
 	<h:form>
-		<p:panelGrid columns="2" >
+		<p:panelGrid columns="2">
 			<f:facet name="caption">
 				<h:outputText value="Filtros" />
 			</f:facet>
@@ -21,32 +21,27 @@
 			</f:facet>
 
 			<p:outputLabel value="Nome: " for="nomeField" />
-			<p:inputText id="nomeField" value="#{UsuarioBean.entidade.nome}"
+			<p:inputText id="nomeField" value="#{usuarioBean.entidade.nome}"
 				label="Nome" style="width:350px" />
 
 			<p:outputLabel value="Cidade: " for="cidadeField" />
-			<p:inputText id="cidadelField" value="#{usuarioBean.entidade.cidade}"
+			<p:inputText id="cidadeField" value="#{usuarioBean.entidade.cidade}"
 				label="cidade" style="width:350px" />
 
 			<p:outputLabel value="Numero telefone: " for="numerotelefoneField" />
-			<p:calendar id="numerotelefoneField"
-				value="#{usuarioBean.entidade.numerotelefone}" label="numerotelefone" />
-				
-				<p:outputLabel value="Email: " for="emailField" />
-			<p:calendar id="emailField"
-				value="#{usuarioBean.entidade.email}" label="email" />
-				
-				<p:outputLabel value="Estado: " for="estadoField" />
-			<p:calendar id="estadoField"
-				value="#{usuarioBean.entidade.estado}" label="estado" />
-				
-				<p:outputLabel value="Producao: " for="producaoField" />
-			<p:calendar id="producaoField"
-				value="#{usuarioBean.entidade.producao}" label="producao" />
-				
-				<p:outputLabel value="Irrigacao: " for="irrigacaoField" />
-			<p:calendar id="irrigacaoField"
-				value="#{usuarioBean.entidade.irrigacao}" label="irrigacao" />
+			<p:inputText id="numerotelefoneField"
+				value="#{usuarioBean.entidade.numeroTelefone}"
+				label="numerotelefone" />
+
+			<p:outputLabel value="Email: " for="emailField" />
+			<p:inputText id="emailField" value="#{usuarioBean.entidade.email}"
+				label="email" />
+
+			<p:outputLabel value="Estado: " for="estadoField" />
+			<p:inputText id="estadoField" value="#{usuarioBean.entidade.estado}"
+				label="estado" />
+
+
 
 			<p:commandButton id="btnNovo" value="Novo"
 				action="#{usuarioBean.save()}" ajax="false" />
@@ -66,15 +61,29 @@
 				<h:outputText value="#{entidade.nome}" />
 			</p:column>
 			<p:column>
+				<f:facet name="header">cidade</f:facet>
+				<h:outputText value="#{entidade.cidade}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">numeroTelefone</f:facet>
+				<h:outputText value="#{entidade.numeroTelefone}" />
+			</p:column>
+
+			<p:column>
 				<f:facet name="header">Email</f:facet>
 				<h:outputText value="#{entidade.email}" />
 			</p:column>
+
 			<p:column>
-				<f:facet name="header">Nascimento</f:facet>
-				<h:outputText value="#{entidade.nascimento}">
-					<f:convertDateTime pattern="dd/MM/yyyy" />
-				</h:outputText>
+				<f:facet name="header">estado</f:facet>
+				<h:outputText value="#{entidade.estado}" />
 			</p:column>
+
+			<p:column>
+				<f:facet name="header">Email</f:facet>
+				<h:outputText value="#{entidade.cidade}" />
+			</p:column>
+
 			<p:column>
 				<f:facet name="header">Opções</f:facet>
 				<p:commandButton value="Remover" ajax="false"
