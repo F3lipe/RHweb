@@ -4,7 +4,7 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<title>Perfil </title>
+	<title>Perfil</title>
 </h:head>
 
 
@@ -12,7 +12,7 @@
 	<p:messages />
 
 	<h:form>
-		<p:panelGrid columns="2" >
+		<p:panelGrid columns="2">
 			<f:facet name="caption">
 				<h:outputText value="Filtros" />
 			</f:facet>
@@ -20,17 +20,32 @@
 				<h:outputText value="Usuário" />
 			</f:facet>
 
-			<p:outputLabel value="Nome: " for="nomeField" />
+			<p:outputLabel value="nome: " for="nomeField" />
 			<p:inputText id="nomeField" value="#{usuarioBean.entidade.nome}"
-				label="Nome" style="width:350px" />
+				label="nome" style="width:350px" />
 
-			<p:outputLabel value="E-mail: " for="emailField" />
+
+			<p:outputLabel value="email: " for="emailField" />
 			<p:inputText id="emailField" value="#{usuarioBean.entidade.email}"
-				label="Nome" style="width:350px" />
+				label="email" style="width:350px" />
 
-			<p:outputLabel value="Nascimento: " for="nascimentoField" />
-			<p:calendar id="nascimentoField"
-				value="#{usuarioBean.entidade.nascimento}" label="Nascimento" />
+			<p:outputLabel value="cidade: " for="cidadeField" />
+			<p:inputText id="cidadeField" value="#{usuarioBean.entidade.cidade}"
+				label="cidade" style="width:350px" />
+
+
+
+			<p:outputLabel value="numeroTelefone: " for="numeroTelefoneField" />
+			<p:inputText id="numeroTelefoneField"
+				value="#{usuarioBean.entidade.numeroTelefone}"
+				label="numeroTelefone" style="width:350px" />
+
+			<p:outputLabel value="estado: " for="estadoField" />
+			<p:inputText id="estadoField" value="#{usuarioBean.entidade.estado}"
+				label="estado" style="width:350px" />
+
+
+
 
 			<p:commandButton id="btnNovo" value="Novo"
 				action="#{usuarioBean.save()}" ajax="false" />
@@ -39,26 +54,37 @@
 		</p:panelGrid>
 
 
+
 		<p:dataTable id="dataTableEntidades" border="1" var="entidade"
 			value="#{usuarioBean.entidades}">
 			<p:column>
-				<f:facet name="header">ID</f:facet>
+				<f:facet name="header">id</f:facet>
 				<h:outputText value="#{entidade.id}" />
 			</p:column>
 			<p:column>
-				<f:facet name="header">Nome</f:facet>
+				<f:facet name="header">nome</f:facet>
 				<h:outputText value="#{entidade.nome}" />
 			</p:column>
 			<p:column>
-				<f:facet name="header">Email</f:facet>
+				<f:facet name="header">email</f:facet>
 				<h:outputText value="#{entidade.email}" />
 			</p:column>
 			<p:column>
-				<f:facet name="header">Nascimento</f:facet>
-				<h:outputText value="#{entidade.nascimento}">
-					<f:convertDateTime pattern="dd/MM/yyyy" />
-				</h:outputText>
+				<f:facet name="header">cidade</f:facet>
+				<h:outputText value="#{entidade.cidade}" />
 			</p:column>
+			<p:column>
+				<f:facet name="header">numeroTelefone</f:facet>
+				<h:outputText value="#{entidade.numeroTelefone}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">estado</f:facet>
+				<h:outputText value="#{entidade.estado}" />
+			</p:column>
+
+
+
+
 			<p:column>
 				<f:facet name="header">Opções</f:facet>
 				<p:commandButton value="Remover" ajax="false"
