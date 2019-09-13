@@ -4,7 +4,7 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<title>Pe,rfil</title>
+	<title>Gerenciador de Usuários</title>
 </h:head>
 
 
@@ -20,30 +20,26 @@
 				<h:outputText value="Usuário" />
 			</f:facet>
 
-			<p:outputLabel value="nome: " for="nomeField" />
+			<p:outputLabel value="Nome: " for="nomeField" />
 			<p:inputText id="nomeField" value="#{usuarioBean.entidade.nome}"
-				label="nome" style="width:350px" />
+				label="Nome" style="width:350px" />
 
-
-			<p:outputLabel value="email: " for="emailField" />
-			<p:inputText id="emailField" value="#{usuarioBean.entidade.email}"
-				label="email" style="width:350px" />
-
-			<p:outputLabel value="cidade: " for="cidadeField" />
+			<p:outputLabel value="Cidade: " for="cidadeField" />
 			<p:inputText id="cidadeField" value="#{usuarioBean.entidade.cidade}"
 				label="cidade" style="width:350px" />
 
-
-
-			<p:outputLabel value="numeroTelefone: " for="numeroTelefoneField" />
-			<p:inputText id="numeroTelefoneField"
+			<p:outputLabel value="Numero telefone: " for="numerotelefoneField" />
+			<p:inputText id="numerotelefoneField"
 				value="#{usuarioBean.entidade.numeroTelefone}"
-				label="numeroTelefone" style="width:350px" />
+				label="numerotelefone" />
 
-			<p:outputLabel value="estado: " for="estadoField" />
+			<p:outputLabel value="Email: " for="emailField" />
+			<p:inputText id="emailField" value="#{usuarioBean.entidade.email}"
+				label="email" />
+
+			<p:outputLabel value="Estado: " for="estadoField" />
 			<p:inputText id="estadoField" value="#{usuarioBean.entidade.estado}"
-				label="estado" style="width:350px" />
-
+				label="estado" />
 
 
 
@@ -54,20 +50,15 @@
 		</p:panelGrid>
 
 
-
 		<p:dataTable id="dataTableEntidades" border="1" var="entidade"
 			value="#{usuarioBean.entidades}">
 			<p:column>
-				<f:facet name="header">id</f:facet>
+				<f:facet name="header">ID</f:facet>
 				<h:outputText value="#{entidade.id}" />
 			</p:column>
 			<p:column>
-				<f:facet name="header">nome</f:facet>
+				<f:facet name="header">Nome</f:facet>
 				<h:outputText value="#{entidade.nome}" />
-			</p:column>
-			<p:column>
-				<f:facet name="header">email</f:facet>
-				<h:outputText value="#{entidade.email}" />
 			</p:column>
 			<p:column>
 				<f:facet name="header">cidade</f:facet>
@@ -77,13 +68,21 @@
 				<f:facet name="header">numeroTelefone</f:facet>
 				<h:outputText value="#{entidade.numeroTelefone}" />
 			</p:column>
+
+			<p:column>
+				<f:facet name="header">Email</f:facet>
+				<h:outputText value="#{entidade.email}" />
+			</p:column>
+
 			<p:column>
 				<f:facet name="header">estado</f:facet>
 				<h:outputText value="#{entidade.estado}" />
 			</p:column>
 
-
-
+			<p:column>
+				<f:facet name="header">Email</f:facet>
+				<h:outputText value="#{entidade.cidade}" />
+			</p:column>
 
 			<p:column>
 				<f:facet name="header">Opções</f:facet>
