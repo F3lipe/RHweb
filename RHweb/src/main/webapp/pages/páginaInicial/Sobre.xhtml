@@ -2,10 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"	 
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 	<meta charset="utf-8 "></meta>
-	<title>Menu iniciar</title>
 </h:head>
 
 
@@ -13,12 +13,12 @@
 
 	<header>
 
-
+		<ui:include src="menu2.xhtml" />
 
 
 		<p:panel id="basic" header="Sobre" style="margin-bottom:20px">
 			<h:panelGrid columns="2" cellpadding="10">
-				<img src="sobre.png" width= "250px" />
+				<img src="../img/sobre.png" width="250px" />
 				<h:outputText
 					value="Projeto para o desenvolvimento de um sistema para o monitoramento de recursos hídricos na produção da agricultura familiar" />
 			</h:panelGrid>

@@ -14,32 +14,54 @@
 	<header>
 
 
+		<div id="tabmenu">
+			<p:tabMenu activeIndex="#{param.i}">
+				<p:menuitem value="Perfil" outcome="perfil.xhtml" icon="pi pi-star">
+					<f:param name="i" value="0" />
+				</p:menuitem>
+				<p:menuitem value="Meus cultivos" outcome="meusCultivos.xhtml"
+					icon="pi pi-search">
+					<f:param name="i" value="1" />
+				</p:menuitem>
+				<p:menuitem value="Monitoramento da minha água"
+					outcome="monitoramento.xhtml" icon="pi pi-file">
+					<f:param name="i" value="2" />
+				</p:menuitem>
+				<p:menuitem value="Informações do tempo"
+					outcome="informacaoTempo.xhtml" icon="pi pi-briefcase">
+					<f:param name="i" value="3" />
+				</p:menuitem>
+				<p:menuitem value="Acionar irrigação" outcome="irrigacao.xhtml"
+					icon="pi pi-user">
+					<f:param name="i" value="4" />
+				</p:menuitem>
+				<p:menuitem value="Sobre" outcome="Sobre.xhtml" icon="pi pi-user">
+					<f:param name="i" value="5" />
+				</p:menuitem>
+				<p:menuitem value="Cadastrar Pessoa"
+					outcome="gerenciadorUsuario.xhtml" icon="pi pi-user">
+					<f:param name="i" value="6" />
+				</p:menuitem>
+			</p:tabMenu>
+
+		</div>
+
+		<Style>
+#tabmenu {
+	padding: 15px;
+	margin-left: -15px;
+	
+}
+</Style>
 
 
-		<p:panel id="basic" header="Sobre" style="margin-bottom:20px">
-			<h:panelGrid columns="2" cellpadding="10">
-				<img src="sobre.png" width= "250px" />
-				<h:outputText
-					value="Projeto para o desenvolvimento de um sistema para o monitoramento de recursos hídricos na produção da agricultura familiar" />
-			</h:panelGrid>
-			<br> </br>
-
-
-			<h1>Grupo formado por:</h1>
-			<ul>
-				<li><a href="./bianca.xhtml">Bianca Melo</a></li>
-				<li><a href="./emanoela.xhtml"> Emanoela Guedes </a></li>
-				<li><a href="./felipe.xhtml">Felipe Emmanuel </a></li>
-				<li><a href="./janielle.xhtml">Janielle Vicente</a></li>
-
-			</ul>
-
-			<li id="voltar"><a href="menu2.xhtml">Menu Inicial </a></li>
 
 
 
 
-		</p:panel>
+
+
+
 
 
 		<style>

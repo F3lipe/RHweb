@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-	<title>Gerenciador de Usuários</title>
+	<meta charset="utf-8 "></meta>
 </h:head>
 
 
 <h:body>
+
+	<ui:include src="menu2.xhtml" />
 	<p:messages />
 
 	<h:form>
@@ -90,8 +93,11 @@
 					action="#{usuarioBean.remove(entidade)}"></p:commandButton>
 				<p:commandButton value="Editar" ajax="false"
 					action="#{usuarioBean.editar(entidade.id)}"></p:commandButton>
+				<li id="Confirmar"><a href="Sobre.xhtml">Menu Inicial </a></li>
 			</p:column>
 		</p:dataTable>
+
+		
 	</h:form>
 </h:body>
 </html>
