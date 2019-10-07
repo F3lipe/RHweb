@@ -13,22 +13,23 @@
 
 	<header>
 
-		<ui:include src="menu2.xhtml" />
-
 		<style type="text/css">
 .ui-stack {
 	z-index: 1000;
 }
 </style>
 
+		<ui:include src="menu2.xhtml" />
 
 
-		<p:stack icon="../img/mais.png" expanded="true" id="botao">
-			<p:menuitem value="Novo Cultivo"
-				icon="../img/cultivo.png" url="novocultivo.xhtml" />
-			<p:menuitem value="Meus Cultivos"
-				icon="/resources/demo/images/dock/video.png"
-				url="meusCultivos.xhtml" />
+
+
+
+		<p:stack icon="../img/novo.png" expanded="false" id="botao" >
+			<p:menuitem value="Novo Cultivo" icon="../img/novoc.png"
+				url="novocultivo.xhtml" id="novocultivo" />
+			<p:menuitem value="Meus Cultivos" icon="../img/meuscultivos.png"
+				url="meusCultivos.xhtml" id="meuscultivos" />
 
 		</p:stack>
 
@@ -49,8 +50,7 @@
 }
 
 #botao {
-	width: 50px;
-	height: 50px;
+	z-index: 1000;
 }
 </style>
 	</header>

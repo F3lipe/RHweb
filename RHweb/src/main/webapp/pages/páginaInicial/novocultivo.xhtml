@@ -23,13 +23,20 @@
 				<h:outputText value="Cultivo" />
 			</f:facet>
 
-			<p:outputLabel value="O que deseja plantar? " for="nomeCultivoField" />
-			<p:inputText id="nomeCultivoField" value="#{cultivoBean.entidade.nomeCultivo}"
-				label="nomeplantacao" style="width:350px" />
+			<p:outputLabel value="O que deseja plantar?: " for="nomeCultivoField" />
+			<p:inputText id="nomeCultivoField"
+				value="#{cultivoBean.entidade.nomeCultivo}" label="nomeplantacao"
+				style="width:350px" />
+
+			<p:outputLabel value="Descrição: " for="descricaoField" />
+			<p:inputText id="descricaoField"
+				value="#{cultivoBean.entidade.descricao}" label="descricaoplant"
+				style="width:350px" />
 
 			<p:outputLabel value="Data da plantação: " for="periodoSafraField" />
-			<p:calendar id="periodoSafraField" value="#{cultivoBean.entidade.periodoSafra}"
-				label="Dataplantacao" style="width:350px" />
+			<p:calendar id="periodoSafraField"
+				value="#{cultivoBean.entidade.periodoSafra}" label="Dataplantacao"
+				style="width:350px" />
 
 
 
@@ -42,20 +49,26 @@
 
 
 		<p:dataTable id="dataTableEntidades" border="1" var="entidade"
-			value="#{usuarioBean.entidades}">
+			value="#{cultivoBean.entidades}">
 			<p:column>
 				<f:facet name="header">ID</f:facet>
 				<h:outputText value="#{entidade.id}" />
 			</p:column>
 			<p:column>
 				<f:facet name="header">Nome</f:facet>
-				<h:outputText value="#{entidade.nome}" />
+				<h:outputText value="#{entidade.nomeCultivo}" />
 			</p:column>
 			<p:column>
-				<f:facet name="header">cidade</f:facet>
-				<h:outputText value="#{entidade.cidade}" />
+				<f:facet name="header">descricao</f:facet>
+				<h:outputText value="#{entidade.descricao}" />
 			</p:column>
-			>
+			<p:column>
+				<f:facet name="header">periodoSafra</f:facet>
+				<h:outputText value="#{entidade.periodoSafra}">
+					<f:convertDateTime pattern="dd/MM/yyyy" />
+				</h:outputText>
+			</p:column>
+
 
 			<p:column>
 				<f:facet name="header">Opções</f:facet>
@@ -67,7 +80,7 @@
 			</p:column>
 		</p:dataTable>
 
-		
+
 	</h:form>
 </h:body>
 </html>
