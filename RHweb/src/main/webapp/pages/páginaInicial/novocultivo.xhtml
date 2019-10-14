@@ -25,7 +25,7 @@
 
 			<p:outputLabel value="O que deseja plantar?: " for="nomeCultivoField" />
 			<p:inputText id="nomeCultivoField"
-				value="#{cultivoBean.entidade.nomeCultivo}" label="nomeplantacao"
+				value="#{cultivoBean.entidade.nomeCultivo}" label="nomeCultivo"
 				style="width:350px" />
 
 			<p:outputLabel value="Descrição: " for="descricaoField" />
@@ -73,12 +73,14 @@
 			<p:column>
 				<f:facet name="header">Opções</f:facet>
 				<p:commandButton value="Remover" ajax="false"
-					action="#{usuarioBean.remove(entidade)}"></p:commandButton>
+					action="#{cultivoBean.remove(entidade)}"></p:commandButton>
 				<p:commandButton value="Editar" ajax="false"
-					action="#{usuarioBean.editar(entidade.id)}"></p:commandButton>
-				<li id="Confirmar"><a href="Sobre.xhtml">Menu Inicial </a></li>
+					action="#{cultivoBean.editar(entidade.id)}"></p:commandButton>
+				<li id="Confirmar"><a href="meusCultivos.xhtml">Menu Inicial </a></li>
 			</p:column>
 		</p:dataTable>
+		
+		<li id="voltar"><a id="menu2" href="meusCultivos.xhtml">Voltar </a></li>
 
 
 	</h:form>

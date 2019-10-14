@@ -3,7 +3,7 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:p="http://primefaces.org/ui"
-	 xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 	<meta charset="utf-8 "></meta>
 </h:head>
@@ -15,7 +15,18 @@
 
 		<ui:include src="menu2.xhtml" />
 
-		<h1>PÁGINA DO MONITORAMENTO</h1>
+		<h1>PÁGINA DE MONITORAMENTO</h1>
+
+		<p:linkButton href="monitoramentoIrrigacao.xhtml" value="Irrigação"
+			style="margin-right:20px;" id="irrigacao">
+			<f:param name="MonitoramentoIrrigacao" value="10" />
+		</p:linkButton>
+
+		<p:linkButton href="monitoramentocisterna.xhtml" value="Cisterna"
+			style="margin-right:20px;" id="cisterna">
+			<f:param name="MonitoramentoIrrigacao" value="10" />
+		</p:linkButton>
+
 
 		<style>
 #voltar {
@@ -24,7 +35,19 @@
 }
 
 #menu2 {
-	color: #324eab
+	color: #324eab;
+}
+
+#irrigacao {
+	background: #f2933a;
+	border-color: #f2933a;
+	border-radius: 10px;
+}
+
+#cisterna {
+	background: #48b0d9;;
+	border-color: #48b0d9;;
+	border-radius: 10px;
 }
 </style>
 	</header>

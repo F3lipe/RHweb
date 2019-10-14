@@ -9,7 +9,7 @@
 </h:head>
 
 
-<h:body>
+<h:body id= "corpo">
 
 	<header>
 
@@ -35,11 +35,11 @@
 					icon="pi pi-user">
 					<f:param name="i" value="4" />
 				</p:menuitem>
-				<p:menuitem value="Sobre" outcome="Sobre.xhtml" icon="pi pi-user">
-					<f:param name="i" value="5" />
-				</p:menuitem>
 				<p:menuitem value="Cadastrar Pessoa"
 					outcome="gerenciadorUsuario.xhtml" icon="pi pi-user">
+					<f:param name="i" value="5" />
+				</p:menuitem>
+				<p:menuitem value="Sobre" outcome="Sobre.xhtml" icon="pi pi-user">
 					<f:param name="i" value="6" />
 				</p:menuitem>
 			</p:tabMenu>
@@ -47,10 +47,16 @@
 		</div>
 
 		<Style>
+
+
+		
 #tabmenu {
-	padding: 15px;
-	margin-left: -15px;
-	
+	padding: 0px;
+	margin-left: -5px;
+}
+
+#corpo{
+background-color:  #cfffde;
 }
 </Style>
 
