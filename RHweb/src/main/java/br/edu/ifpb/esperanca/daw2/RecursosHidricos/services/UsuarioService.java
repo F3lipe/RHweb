@@ -1,6 +1,10 @@
 package br.edu.ifpb.esperanca.daw2.RecursosHidricos.services;
 import java.io.Serializable;
 import java.util.List;
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Base64;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -23,6 +27,7 @@ public class UsuarioService implements Serializable, Service<Usuario> {
 
 	@TransacionalCdi
 	public void save(Usuario user) {
+		user.setSenha(hash(user.getSenha()));
 		userDAO.save(user);
 	}
 
@@ -43,5 +48,19 @@ public class UsuarioService implements Serializable, Service<Usuario> {
 	public List<Usuario> getAll() {
 			return userDAO.getAll();
 	}
+	
+	private String hash(String senha) {
+		try {
+			MessageDigest md;
+			md = MessageDigest.getInstance("SHA-256");
+			md.update(senha.getBytes("UTF-8"));
+			byte[] digest = md.digest();
+			String output = Base64.getEncoder().encodeToString(digest);
+			return output;
+		} catch (Exception e) {
+			return senha;
+		}
+	}
+
 		
 }

@@ -1,17 +1,22 @@
 package br.edu.ifpb.esperanca.daw2.RecursosHidricos.Bean;
 
+import java.io.IOException;
 import java.io.Serializable;
+import java.security.Principal;
 import java.util.Collection;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import br.edu.ifpb.esperanca.daw2.RecursosHidricos.entities.Usuario;
 import br.edu.ifpb.esperanca.daw2.RecursosHidricos.services.UsuarioService;
-
-
 
 @SessionScoped
 @Named
@@ -30,6 +35,32 @@ public class UsuarioBean implements Serializable {
 	public void init() {
 		entidade = newEntidade();
 		entidades = getService().getAll();
+	}
+
+	public String getUserLogin() {
+		FacesContext facesContext = FacesContext.getCurrentInstance();
+		ExternalContext externalContext = facesContext.getExternalContext();
+		Principal userPrincipal = externalContext.getUserPrincipal();
+		if (userPrincipal == null) {
+			return "";
+		}
+		return userPrincipal.getName();
+	}
+
+	public void efetuarLogout() throws IOException, ServletException {
+		FacesContext fc = FacesContext.getCurrentInstance();
+		ExternalContext ec = fc.getExternalContext();
+		HttpSession session = (HttpSession) ec.getSession(false);
+		session.invalidate();
+		HttpServletRequest request = (HttpServletRequest) ec.getRequest();
+		request.logout();
+		ec.redirect(ec.getApplicationContextPath());
+	}
+
+	public boolean isUserInRole(String role) {
+		FacesContext facesContext = FacesContext.getCurrentInstance();
+		ExternalContext externalContext = facesContext.getExternalContext();
+		return externalContext.isUserInRole(role);
 	}
 
 	public void remove(Usuario entidade) {
@@ -63,7 +94,7 @@ public class UsuarioBean implements Serializable {
 		save();
 	}
 
-	public void limpar() { 
+	public void limpar() {
 		entidades = getService().getAll();
 		entidade = newEntidade();
 	}
