@@ -13,50 +13,27 @@
 <h:body>
 	<p:messages />
 
-	<h:form id="formMenu">
-		<p:menubar>
-			<f:facet name="options">
-						Olá, #{usuarioBean.entidade.email}
-						<p:commandButton id="menuItemLogout" value="Logout"
-					icon="fa fa-fw fa-sign-out" action="#{usuarioBean.efetuarLogout}"
-					ajax="false" />
-			</f:facet>
-		</p:menubar>
-	</h:form>
+
 
 	<h:form>
-		<p:panelGrid columns="2"/>
-				</f:facet>
-@@ -32,8 +43,25 @@
-			<p:calendar id="nascimentoField"
-					value="#{usuarioBean.entidade.nascimento}" label="Nascimento" />
+		<p:panelGrid columns="2" />
+		<p:outputLabel value="Nome: " for="nomeField" />
+		<p:inputText id="nomeField" value="#{usuarioBean.entidade.nome}"
+			label="Nome" /> <br> </br>
 
-				<p:outputLabel value="Username: " for="usernameField" />
-				<p:inputText id="usernameField"
-					value="#{usuarioBean.entidade.username}" label="Username"
-					style="width:350px" />
+		<p:outputLabel value="Email: " for="emailField" />
+		<p:inputText id="emailField" value="#{usuarioBean.entidade.email}"
+			label="Email" style="width:350px" /><br> </br>
 
-				<p:outputLabel value="Password: " for="passwordField" />
-				<p:password id="passwordField"
-					value="#{usuarioBean.entidade.password}" label="Password"
-					style="width:350px" />
+		<p:outputLabel value="Senha: " for="senhaField" />
+		<p:password id="senhaField" value="#{usuarioBean.entidade.senha}"
+			label="senha" style="width:350px" /><br> </br>
 
-				<p:outputLabel value="Grupo: " for="grupoField" />
-				<p:selectOneMenu id="grupoField"
-					value="#{usuarioBean.entidade.grupo}" label="Grupo"
-					style="width:350px">
-					<f:selectItem itemLabel="OUTROS" itemValue="OUTROS" />
-					<f:selectItem itemLabel="ADMIN" itemValue="ADMIN" />
-				</p:selectOneMenu>
 
-				<p:commandButton id="btnNovo" value="Novo"
-					action="#{usuarioBean.save()}" ajax="false" />
-				action="#{usuarioBean.save()}" ajax="false"  />
-			<p:commandButton id="btnLimpar" value="Limpar"
-					action="#{usuarioBean.limpar()}" ajax="false" />
-			</p:panelGrid>
-
-		</p:panelGrid>
+		<p:commandButton id="btnNovo" value="Novo"
+			action="#{usuarioBean.save()}" ajax="false" />
+		<p:commandButton id="btnLimpar" value="Limpar"
+			action="#{usuarioBean.limpar()}" ajax="false" />
 	</h:form>
 </h:body>
 </html>
