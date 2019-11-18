@@ -1,14 +1,20 @@
 package br.edu.ifpb.esperanca.daw2.RecursosHidricos.entities;
 
-import java.sql.Date;
+
+import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Cultivo implements Identificavel {
 
 	@Id
+	@GeneratedValue(generator = "cultivo_seq", strategy = GenerationType.SEQUENCE)
+	@SequenceGenerator(name = "cultivo_seq")
 	private Long id;
 	private String nomeCultivo;
 	private String descricao;

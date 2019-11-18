@@ -4,13 +4,15 @@ import java.io.Serializable;
 import java.util.Collection;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import br.edu.ifpb.esperanca.daw2.RecursosHidricos.entities.Cultivo;
-import br.edu.ifpb.esperanca.daw2.RecursosHidricos.entities.Usuario;
 import br.edu.ifpb.esperanca.daw2.RecursosHidricos.services.CultivoService;
 
-@SuppressWarnings("serial")
+@Named
+@SessionScoped
 public class CultivoBean implements Serializable {
 	
 	@Inject

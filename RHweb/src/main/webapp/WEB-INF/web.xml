@@ -16,7 +16,7 @@
     <url-pattern>*.xhtml</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
-		<welcome-file>/pages/private/gerenciadorUsuario.xhtml</welcome-file>
+		<welcome-file>/pages/páginaInicial/Sobre.xhtml</welcome-file>
 	</welcome-file-list>
 	<session-config>
 		<session-timeout>1</session-timeout>
