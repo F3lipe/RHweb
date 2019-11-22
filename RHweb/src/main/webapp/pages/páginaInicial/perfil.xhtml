@@ -11,38 +11,80 @@
 
 <h:body>
 
-	<header>
-
-		<ui:include src="menu2.xhtml" />
 
 
+	<ui:include src="menu2.xhtml" />
 
-		<li id="voltar"><a id="menu2" href="menu2.xhtml">Menu Inicial
-		</a></li>
-
-
-<h3 style="margin-top:0"> Minhas Informações</h3>
-<p:panelGrid columns="1">
-    <f:facet name="header">
-<img width="30%" src="../img/perfil.png"  />  
-  </f:facet>
-     
-    <h:outputText value="Nome:" />
-    <h:outputText value="         " />
-     
-    <h:outputText value="Cidade:" />
-    <h:outputText value="          " />
-     
-    <h:outputText value="Endereço:" />
-    <h:outputText value="" />
-     
-    <h:outputText value=" Telefone:" />
-    <h:outputText value="" />
-</p:panelGrid>
+	<h:form>
+		<h3 style="margin-top: 0">Minhas Informações</h3>
+		<p:panelGrid columns="1">
+			<f:facet name="header">
+				<img width="200px" height="200px" src="../img/perfil.png" />
+			</f:facet>
+		</p:panelGrid>
 
 
+		<p:growl id="messages" showDetail="true" />
+ 
+<br />
+		<h:form enctype="multipart/form-data">
+			<p:fileUpload value="#{fileUploadView.file}" mode="simple"
+				skinSimple="true" />
+			<br />
+			<p:commandButton value="Submit" ajax="false"
+				action="#{fileUploadView.upload}" disabled="true" />
+		</h:form>
+		<br> </br>
 
-	</header>
+		<p:dataTable id="dataTableEntidades" border="1" var="entidade"
+			value="#{usuarioBean.entidades}">
+			<p:column>
+				<f:facet name="header">ID</f:facet>
+				<h:outputText value="#{entidade.id}" />
+			</p:column>
+
+			<p:column>
+				<f:facet name="header">Nome</f:facet>
+				<h:outputText value="#{entidade.nome}" />
+			</p:column>
+			<br> </br>
+			<p:column>
+				<f:facet name="header">cidade</f:facet>
+				<h:outputText value="#{entidade.cidade}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">numeroTelefone</f:facet>
+				<h:outputText value="#{entidade.numeroTelefone}" />
+			</p:column>
+
+			<p:column>
+				<f:facet name="header">Email</f:facet>
+				<h:outputText value="#{entidade.email}" />
+			</p:column>
+
+			<p:column>
+				<f:facet name="header">estado</f:facet>
+				<h:outputText value="#{entidade.estado}" />
+			</p:column>
+
+			<p:column>
+				<f:facet name="header">Email</f:facet>
+				<h:outputText value="#{entidade.cidade}" />
+			</p:column>
+
+			<p:column>
+				<f:facet name="header">Opções</f:facet>
+				<p:commandButton value="Remover" ajax="false"
+					action="#{usuarioBean.remove(entidade)}"></p:commandButton>
+				<p:commandButton value="Editar" ajax="false"
+					action="#{usuarioBean.editar(entidade.id)}"></p:commandButton>
+			</p:column>
+		</p:dataTable>
+
+
+	</h:form>
+
+
 
 
 	<style>

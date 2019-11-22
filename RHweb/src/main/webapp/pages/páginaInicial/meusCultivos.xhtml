@@ -22,10 +22,7 @@
 		<ui:include src="menu2.xhtml" />
 
 
-
-
-
-		<p:stack icon="../img/novo.png" expanded="false" id="botao" >
+		<p:stack icon="../img/novo.png" expanded="false" id="botao">
 			<p:menuitem value="Novo Cultivo" icon="../img/novoc.png"
 				url="novocultivo.xhtml" id="novocultivo" />
 			<p:menuitem value="Meus Cultivos" icon="../img/meuscultivos.png"
@@ -36,10 +33,52 @@
 
 
 
-		<h1>PÁGINA DO CULTIVO</h1>
+		<h1 id="titulo">Histórico de cultivo</h1>
+		<h:form>
+			<p:dataTable id="dataTableEntidades" border="1" var="entidade"
+				value="#{cultivoBean.entidades}">
+				<p:column>
+					<f:facet name="header">ID</f:facet>
+					<h:outputText value="#{entidade.id}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Nome</f:facet>
+					<h:outputText value="#{entidade.nomeCultivo}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Descrição</f:facet>
+					<h:outputText value="#{entidade.descricao}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Período da Safra</f:facet>
+					<h:outputText value="#{entidade.periodoSafra}">
+						<f:convertDateTime pattern="dd/MM/yyyy" />
+					</h:outputText>
+				</p:column>
+
+
+				<p:column>
+					<f:facet name="header">Opções</f:facet>
+					<p:commandButton value="Remover" ajax="false"
+						action="#{cultivoBean.remove(entidade)}"></p:commandButton>
+					<p:commandButton value="Editar" ajax="false"
+						action="#{cultivoBean.editar(entidade.id)}"></p:commandButton>
+				</p:column>
+			</p:dataTable>
+
+			<li id="voltar"><a id="menu2" href="meusCultivos.xhtml">Voltar
+			</a></li>
+
+
+		</h:form>
 
 
 		<style>
+		
+		#titulo{
+		color: #3a7a4c;
+		
+		}
 #voltar {
 	margin-left: 1700px;
 	color: #80187e;
