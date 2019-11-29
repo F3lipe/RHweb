@@ -19,13 +19,15 @@ public class UserServiceRS {
 
 	@Inject
 	private UserService userService;
+	
+
 
 	// http://localhost:8080/ifoto/rest/user/nome/1
 	@GET
-	@Path("/nome/{id}")
+	@Path("/{id}")
 	@Produces("text/html")
-	public String getNome(@PathParam("id") Long id) {
-		return "<h1>"+userService.getByID(id).getNome()+"</h1>";
+	public String Usuario(@PathParam("id") Long id) {
+		return "<h1>"+ UsuarioService.getByID(id).getNome() +"</h1>";
 	}
 	// http://localhost:8080/ifoto/rest/user/list
 	@GET

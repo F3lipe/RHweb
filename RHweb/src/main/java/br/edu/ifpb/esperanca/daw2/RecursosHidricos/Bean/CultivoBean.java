@@ -1,6 +1,7 @@
 package br.edu.ifpb.esperanca.daw2.RecursosHidricos.Bean;
 
 import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
 import java.util.Collection;
 
 import javax.annotation.PostConstruct;
@@ -10,6 +11,9 @@ import javax.inject.Named;
 
 import br.edu.ifpb.esperanca.daw2.RecursosHidricos.entities.Cultivo;
 import br.edu.ifpb.esperanca.daw2.RecursosHidricos.services.CultivoService;
+import net.thegreshams.firebase4j.error.FirebaseException;
+import net.thegreshams.firebase4j.model.FirebaseResponse;
+import net.thegreshams.firebase4j.service.Firebase;
 
 @Named
 @SessionScoped
@@ -21,7 +25,21 @@ public class CultivoBean implements Serializable {
 	protected Collection<Cultivo> entidades;
 
 	public CultivoBean() {
+		String firebase_baseUrl = "https://sistema-de-irrigacao-90764.firebaseio.com/";
 
+		Firebase firebase;
+		try {
+			firebase = new Firebase(firebase_baseUrl);
+			FirebaseResponse firebaseResponse = firebase.get();
+			String rawBody = firebaseResponse.getRawBody();
+			System.out.println(rawBody);
+		} catch (FirebaseException e) {
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+
+		
 	}
 
 	@PostConstruct
