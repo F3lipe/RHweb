@@ -29,7 +29,7 @@
 
 			<p:outputLabel value="Cidade: " for="cidadeField" />
 			<p:inputText id="cidadeField" value="#{usuarioBean.entidade.cidade}"
-				label="cidade" style="width:350px" /> 
+				label="cidade" style="width:350px" />
 
 			<p:outputLabel value="Numero telefone: " for="numerotelefoneField" />
 			<p:inputText id="numerotelefoneField"
@@ -44,60 +44,26 @@
 			<p:inputText id="estadoField" value="#{usuarioBean.entidade.estado}"
 				label="estado" />
 
+			<p:outputLabel value="Senha: " for="senhaField" />
+			<p:password id="senhaField" value="#{usuarioBean.entidade.senha}"
+				label="senha" style="width:350px" />
+			<p:outputLabel value="Imagem de Perfil: " for="imageUserField" />
+			<p:password id="imageUserField" value="#{usuarioBean.entidade.imageUser}"
+				label="imageUser" style="width:350px" />
 
 
-			<p:commandButton id="btnNovo" value="Novo"
+
+
+			<p:commandButton id="btnNovo" value="Cadastrar"
 				action="#{usuarioBean.save()}" ajax="false" />
 			<p:commandButton id="btnLimpar" value="Limpar"
 				action="#{usuarioBean.limpar()}" ajax="false" />
 		</p:panelGrid>
 
 
-		<p:dataTable id="dataTableEntidades" border="1" var="entidade"
-			value="#{usuarioBean.entidades}">
-			<p:column>
-				<f:facet name="header">ID</f:facet>
-				<h:outputText value="#{entidade.id}" />
-			</p:column>
-			<p:column>
-				<f:facet name="header">Nome</f:facet>
-				<h:outputText value="#{entidade.nome}" />
-			</p:column>
-			<p:column>
-				<f:facet name="header">cidade</f:facet>
-				<h:outputText value="#{entidade.cidade}" />
-			</p:column>
-			<p:column>
-				<f:facet name="header">numeroTelefone</f:facet>
-				<h:outputText value="#{entidade.numeroTelefone}" />
-			</p:column>
 
-			<p:column>
-				<f:facet name="header">Email</f:facet>
-				<h:outputText value="#{entidade.email}" />
-			</p:column>
 
-			<p:column>
-				<f:facet name="header">estado</f:facet>
-				<h:outputText value="#{entidade.estado}" />
-			</p:column>
 
-			<p:column>
-				<f:facet name="header">Email</f:facet>
-				<h:outputText value="#{entidade.cidade}" />
-			</p:column>
-
-			<p:column>
-				<f:facet name="header">Opções</f:facet>
-				<p:commandButton value="Remover" ajax="false"
-					action="#{usuarioBean.remove(entidade)}"></p:commandButton>
-				<p:commandButton value="Editar" ajax="false"
-					action="#{usuarioBean.editar(entidade.id)}"></p:commandButton>
-				<li id="Confirmar"><a href="Sobre.xhtml">Menu Inicial </a></li>
-			</p:column>
-		</p:dataTable>
-
-		
 	</h:form>
 </h:body>
 </html>

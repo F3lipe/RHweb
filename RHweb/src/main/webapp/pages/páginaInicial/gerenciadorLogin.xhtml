@@ -1,39 +1,48 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:p="http://primefaces.org/ui"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
-
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:f="http://xmlns.jcp.org/jsf/core"
+xmlns:p="http://primefaces.org/ui"
+xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 <h:head>
-	<title>Gerenciador de Usuários</title>
+<title>Logar</title>
+
 </h:head>
+<body style="background-image: url(./fotos/l.png);">
+
+<h:form id="formMenu">
+<p:menubar>
+<f:facet name="options">
+Olá, #{usuarioBean.pegarUsuario()}
+<p:commandButton id="menuItemLogout" value="Logout"
+icon="fa fa-fw fa-sign-out" action="#{usuarioBean.desconectar()}"
+ajax="false" />
+</f:facet>
+</p:menubar>
+</h:form>
+
+<p:tabView style="width:800px;height:370px;margin:auto;">
+<p:tab title="Login">
+
+<h:form id="formLogin" prependId="false"
+onsubmit="action='j_security_check';">
+
+<h:panelGrid columns="2" style="text-align:center; margin: auto;">
+<h:outputLabel for="j_username" value="Login:" />
+<h:inputText id="j_username" />
+
+<h:outputLabel for="j_password" value="Senha:" />
+<h:inputSecret id="j_password" />
+<p:commandButton id="btnLogin" value="Login" ajax="false"
+icon="fa fa-sign-in" />
+<p:button outcome="cadastro.xhtml" value="Cadastrar" />
+</h:panelGrid>
+</h:form>
+
+</p:tab>
+
+</p:tabView>
 
 
-<h:body>
-	<p:messages />
-
-
-
-	<h:form>
-		<p:panelGrid columns="2" />
-		<p:outputLabel value="Nome: " for="nomeField" />
-		<p:inputText id="nomeField" value="#{usuarioBean.entidade.nome}"
-			label="Nome" /> <br> </br>
-
-		<p:outputLabel value="Email: " for="emailField" />
-		<p:inputText id="emailField" value="#{usuarioBean.entidade.email}"
-			label="Email" style="width:350px" /><br> </br>
-
-		<p:outputLabel value="Senha: " for="senhaField" />
-		<p:password id="senhaField" value="#{usuarioBean.entidade.senha}"
-			label="senha" style="width:350px" /><br> </br>
-
-
-		<p:commandButton id="btnNovo" value="Novo"
-			action="#{usuarioBean.save()}" ajax="false" />
-		<p:commandButton id="btnLimpar" value="Limpar"
-			action="#{usuarioBean.limpar()}" ajax="false" />
-	</h:form>
-</h:body>
+</body>
 </html>

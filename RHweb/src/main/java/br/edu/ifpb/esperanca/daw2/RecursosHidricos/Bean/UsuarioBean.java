@@ -63,6 +63,32 @@ public class UsuarioBean implements Serializable {
 		return externalContext.isUserInRole(role);
 	}
 
+	public String pegarUsuario() {
+		FacesContext facesContext = FacesContext.getCurrentInstance();
+		ExternalContext externalContext = facesContext.getExternalContext();
+		Principal userPrincipal = externalContext.getUserPrincipal();
+		if (userPrincipal == null) {
+			return "";
+		}
+		return userPrincipal.getName();
+	}
+
+	public void desconectar() throws IOException, ServletException {
+		FacesContext fc = FacesContext.getCurrentInstance();
+		ExternalContext ec = fc.getExternalContext();
+		HttpSession session = (HttpSession) ec.getSession(false);
+		session.invalidate();
+		HttpServletRequest request = (HttpServletRequest) ec.getRequest();
+		request.logout();
+		ec.redirect(ec.getApplicationContextPath());
+	}
+
+	public boolean usuarioLogado(String role) {
+		FacesContext facesContext = FacesContext.getCurrentInstance();
+		ExternalContext externalContext = facesContext.getExternalContext();
+		return externalContext.isUserInRole(role);
+	}
+
 	public void remove(Usuario entidade) {
 		getService().remove(entidade);
 		limpar();

@@ -1,11 +1,13 @@
 package br.edu.ifpb.esperanca.daw2.RecursosHidricos.entities;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.SequenceGenerator;
 
 @Entity
@@ -22,11 +24,16 @@ public class Usuario implements Identificavel {
 	private String senha;
 	private String estado;
 
+	@Lob
+	@Column(name = "imageUser")
+	private byte[] imageUser;
+
 	public Usuario() {
 		super();
 	}
 
-	public Usuario(Long id, String nome, String cidade, int numeroTelefone, String email, String senha, String estado) {
+	public Usuario(Long id, String nome, String cidade, int numeroTelefone, String email, String senha, String estado,
+			byte[] imageUser) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -35,6 +42,7 @@ public class Usuario implements Identificavel {
 		this.email = email;
 		this.senha = senha;
 		this.estado = estado;
+		this.imageUser = imageUser;
 	}
 
 	public Long getId() {
@@ -93,6 +101,14 @@ public class Usuario implements Identificavel {
 		this.estado = estado;
 	}
 
+	public byte[] getImageUser() {
+		return imageUser;
+	}
+
+	public void setImageUser(byte[] imageUser) {
+		this.imageUser = imageUser;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -101,6 +117,7 @@ public class Usuario implements Identificavel {
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((estado == null) ? 0 : estado.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + Arrays.hashCode(imageUser);
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		result = prime * result + numeroTelefone;
 		result = prime * result + ((senha == null) ? 0 : senha.hashCode());
@@ -136,6 +153,8 @@ public class Usuario implements Identificavel {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
+		if (!Arrays.equals(imageUser, other.imageUser))
+			return false;
 		if (nome == null) {
 			if (other.nome != null)
 				return false;
@@ -154,7 +173,7 @@ public class Usuario implements Identificavel {
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", nome=" + nome + ", cidade=" + cidade + ", numeroTelefone=" + numeroTelefone
-				+ ", email=" + email + ", senha=" + senha + ", estado=" + estado + "]";
+				+ ", email=" + email + ", senha=" + senha + ", estado=" + estado + ", imageuser=" + imageUser + "]";
 	}
 
 }
