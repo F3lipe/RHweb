@@ -16,7 +16,7 @@
     <url-pattern>*.xhtml</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
-		<welcome-file>/pages/páginaInicial/gerenciadorUsuario.xhtml</welcome-file>
+		<welcome-file>/pages/páginaInicial/gerenciadorLogin.xhtml</welcome-file>
 	</welcome-file-list>
 	<session-config>
 		<session-timeout>1</session-timeout>
@@ -25,8 +25,8 @@
 		<auth-method>FORM</auth-method>
 		<realm-name>agroTechJdbcRealm</realm-name>
 		<form-login-config>
-			<form-login-page>/pages/public/login.xhtml</form-login-page>
-			<form-error-page>/pages/public/login.xhtml?error=true</form-error-page>
+			<form-login-page>/pages/páginaInicial/Login.xhtml</form-login-page>
+			<form-error-page>/pages/páginaInicial/Login.xhtml?error=true</form-error-page>
 		</form-login-config>
 	</login-config>
 	<security-constraint>

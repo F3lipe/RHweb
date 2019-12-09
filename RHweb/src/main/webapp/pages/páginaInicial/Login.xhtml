@@ -12,12 +12,11 @@
 
 
 <h:body>
-	<p:messages />
 	<p:panel header="Login"
 		style="width: 30%; text-align:center; margin: auto;">
 		<h:form id="formLogin" prependId="false"
 			onsubmit="action='j_security_check';">
-
+			<p:messages severity="INFO" />
 			<h:panelGrid columns="2" style="text-align:center; margin: auto;">
 				<h:outputLabel for="j_username" value="Email:" />
 				<h:inputText id="j_username" />
@@ -26,6 +25,7 @@
 				<h:inputSecret id="j_password" />
 				<p:commandButton id="btnLogin" value="Login" ajax="false"
 					icon="fa fa-sign-in" />
+				<p:button outcome="gerenciadorUsuario.xhtml" value="Cadastrar" />
 			</h:panelGrid>
 		</h:form>
 	</p:panel>

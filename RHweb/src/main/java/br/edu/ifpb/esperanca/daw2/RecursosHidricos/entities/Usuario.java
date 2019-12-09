@@ -173,7 +173,10 @@ public class Usuario implements Identificavel {
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", nome=" + nome + ", cidade=" + cidade + ", numeroTelefone=" + numeroTelefone
-				+ ", email=" + email + ", senha=" + senha + ", estado=" + estado + ", imageuser=" + imageUser + "]";
+				+ ", email=" + email + ", senha=" + senha + ", estado=" + estado + ", imageUser="
+				+ Arrays.toString(imageUser) + "]";
 	}
+
+	
 
 }
